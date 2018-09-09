@@ -1,0 +1,563 @@
+document.write('<script type=\"text/javascript" src=\"/loginportal/js/shared/jquery.cookie.js\"></script>');
+
+function toggleFields(countryCode) {
+
+if($("#short").css("display") == "inline"){
+
+
+	   var regForm = document.forms["myti_reg_form"];
+
+	
+    if (countryCode < 0 ) {
+        $(".WW").css("display","inline");
+        $(".CN").css("display","none");
+        $(".JP").css("display","none");
+        $("li[type=worldwideForm]").slideDown("fast"); //Slide Down Effect
+        $("li[type=chinaForm]").css("display","none");
+        $("li[type=japanForm]").css("display","none");
+	$("#cnWrapper").css("display","none");
+	$("#jpWrapper").css("display","none");
+        $.cookie('showTop', 'expanded'); //Add cookie 'showTop'
+        jQuery("#newmyTICountryEN option[value='-99']").attr("selected","selected");
+
+
+	if(regForm.newmyTIPostalCode.value == '' || regForm.newmyTIPostalCode.value == 'Zip or postal code') {
+  regForm.newmyTIPostalCode.value = regForm.CNnewmyTIPostalCode.value;
+}
+if(regForm.newmyTICompany.value == '' || regForm.newmyTICompany.value == 'Company') {
+  regForm.newmyTICompany.value = regForm.CNnewmyTICompany.value;
+}
+
+if(regForm.newmyTIFirstName.value == '' || regForm.newmyTIFirstName.value == 'First name') {
+	regForm.newmyTIFirstName.value = regForm.CNnewmyTIFirstName.value;
+}
+
+if(regForm.newmyTILastName.value == '' || regForm.newmyTILastName.value == 'Last name') {
+	regForm.newmyTILastName.value = regForm.CNnewmyTILastName.value;
+}
+
+if(regForm.newmyTIEmailAddress.value == '' || regForm.newmyTIEmailAddress.value == 'Your email address') {
+	regForm.newmyTIEmailAddress.value = regForm.CNnewmyTIEmailAddress.value;
+}
+
+if(regForm.newmyTIConfirmEmailAddress.value == '' || regForm.newmyTIConfirmEmailAddress.value == 'Confirm email address') {
+	regForm.newmyTIConfirmEmailAddress.value = regForm.CNnewmyTIConfirmEmailAddress.value;
+}
+
+if(regForm.newmyTIPassword.value == '' || regForm.newmyTIPassword.value == 'Create a password') {
+	regForm.newmyTIPassword.value = regForm.CNnewmyTIPassword.value;
+}
+
+if(regForm.newmyTIConfirmPassword.value == '' || regForm.newmyTIConfirmPassword.value == 'Confirm password') {
+	regForm.newmyTIConfirmPassword.value = regForm.CNnewmyTIConfirmPassword.value;
+}
+
+
+
+
+if(regForm.newmyTIPostalCode.value == '' || regForm.newmyTIPostalCode.value == 'Zip or postal code') {
+  regForm.newmyTIPostalCode.value = regForm.JPnewmyTIPostalCode.value;
+}
+if(regForm.newmyTICompany.value == '' || regForm.newmyTICompany.value == 'Company') {
+  regForm.newmyTICompany.value = regForm.JPnewmyTICompany.value;
+}
+
+if(regForm.newmyTIFirstName.value == '' || regForm.newmyTIFirstName.value == 'First name') {
+	regForm.newmyTIFirstName.value = regForm.JPnewmyTIFirstName.value;
+}
+
+if(regForm.newmyTILastName.value == '' || regForm.newmyTILastName.value == 'Last name') {
+	regForm.newmyTILastName.value = regForm.JPnewmyTILastName.value;
+}
+
+if(regForm.newmyTIEmailAddress.value == '' || regForm.newmyTIEmailAddress.value == 'Your email address') {
+	regForm.newmyTIEmailAddress.value = regForm.JPnewmyTIEmailAddress.value;
+}
+
+if(regForm.newmyTIConfirmEmailAddress.value == '' || regForm.newmyTIConfirmEmailAddress.value == 'Confirm email address') {
+	regForm.newmyTIConfirmEmailAddress.value = regForm.JPnewmyTIConfirmEmailAddress.value;
+}
+
+if(regForm.newmyTIPassword.value == '' || regForm.newmyTIPassword.value == 'Create a password') {
+	regForm.newmyTIPassword.value = regForm.JPnewmyTIPassword.value;
+}
+
+if(regForm.newmyTIConfirmPassword.value == '' || regForm.newmyTIConfirmPassword.value == 'Confirm password') {
+	regForm.newmyTIConfirmPassword.value = regForm.JPnewmyTIConfirmPassword.value;
+}
+
+
+	$('#CNnewmyTICompanyEN').val('');	
+$('#CNnewmyTILastNameEN').val('');	
+$('#CNnewmyTIFirstNameEN').val('');	
+$('#JPnewmyTICompanyEN').val('');	
+$('#JPnewmyTILastNameEN').val('');	
+$('#JPnewmyTIFirstNameEN').val('');
+
+
+	$("#newUserError").hide();
+	//$(".errorMsg").hide();
+    }
+    else if (countryCode == "CN" ) {
+
+if ($('body').hasClass('lt-ie10')) {
+
+
+
+} else {
+
+        if(regForm.CNnewmyTICompanyEN.value == '' || regForm.CNnewmyTICompanyEN.value == 'Company'){
+	   regForm.CNnewmyTICompanyEN.value = '';
+        }
+	if(regForm.CNnewmyTILastNameEN.value == '' || regForm.CNnewmyTILastNameEN.value == 'Last name'){	
+		regForm.CNnewmyTILastNameEN.value = '';
+	}
+	if(regForm.CNnewmyTIFirstNameEN.value == '' || regForm.CNnewmyTIFirstNameEN.value == 'First name'){	
+		regForm.CNnewmyTIFirstNameEN.value = '';
+	}
+
+}
+	regForm.CNnewmyTIPostalCode.value = regForm.newmyTIPostalCode.value;
+regForm.CNnewmyTICompany.value = regForm.newmyTICompany.value;
+regForm.CNnewmyTIFirstName.value = regForm.newmyTIFirstName.value;
+regForm.CNnewmyTILastName.value = regForm.newmyTILastName.value;
+regForm.CNnewmyTIEmailAddress.value = regForm.newmyTIEmailAddress.value;
+regForm.CNnewmyTIConfirmEmailAddress.value = regForm.newmyTIConfirmEmailAddress.value;
+
+
+	regForm.CNnewmyTIPassword.value = regForm.newmyTIPassword.value;
+	regForm.CNnewmyTIConfirmPassword.value = regForm.newmyTIConfirmPassword.value;
+
+
+
+        $(".WW").css("display","none");
+        $(".CN").css("display","inline");
+        $(".JP").css("display","none");
+        $("li[type=chinaForm]").slideDown("fast"); //Slide Down Effect
+        $("li[type=japanForm]").css("display","none");
+        $("li[type=worldwideForm]").css("display","none");
+	$("#cnWrapper").css("display","block");
+	$("#jpWrapper").css("display","none");
+        $.cookie('showTop', 'expanded1'); //Add cookie 'showTop'
+        jQuery("#newmyTICountryCN option[value='CN']").attr("selected","selected");
+	$("#newUserError").hide();	
+	//$(".errorMsg").hide();
+
+    }
+    else if (countryCode == "JP" ) {
+
+if ($('body').hasClass('lt-ie10')) {
+
+	
+
+
+} else {
+
+        if(regForm.JPnewmyTICompanyEN.value == '' || regForm.JPnewmyTICompanyEN.value == 'Company'){
+	   regForm.JPnewmyTICompanyEN.value = '';
+        }
+	if(regForm.JPnewmyTILastNameEN.value == '' || regForm.JPnewmyTILastNameEN.value == 'Last name'){	
+		regForm.JPnewmyTILastNameEN.value = '';
+	}
+	if(regForm.JPnewmyTIFirstNameEN.value == '' || regForm.JPnewmyTIFirstNameEN.value == 'First name'){	
+		regForm.JPnewmyTIFirstNameEN.value = '';
+	}
+
+}
+
+	regForm.JPnewmyTIPostalCode.value = regForm.newmyTIPostalCode.value;
+regForm.JPnewmyTICompany.value = regForm.newmyTICompany.value;
+regForm.JPnewmyTIFirstName.value = regForm.newmyTIFirstName.value;
+regForm.JPnewmyTILastName.value = regForm.newmyTILastName.value;
+regForm.JPnewmyTIEmailAddress.value = regForm.newmyTIEmailAddress.value;
+regForm.JPnewmyTIConfirmEmailAddress.value = regForm.newmyTIConfirmEmailAddress.value;
+
+
+	regForm.JPnewmyTIPassword.value = regForm.newmyTIPassword.value;
+	regForm.JPnewmyTIConfirmPassword.value = regForm.newmyTIConfirmPassword.value;
+
+
+
+        $(".WW").css("display","none");
+        $(".CN").css("display","none");
+        $(".JP").css("display","inline");
+        $("li[type=japanForm]").slideDown("fast"); //Slide Down Effect
+        $("li[type=chinaForm]").css("display","none");
+        $("li[type=worldwideForm]").css("display","none");
+	$("#cnWrapper").css("display","none");
+	$("#jpWrapper").css("display","block");
+        $.cookie('showTop', 'expanded2'); //Add cookie 'showTop'
+        jQuery("#newmyTICountryJP option[value='JP']").attr("selected","selected");
+	$("#newUserError").hide();
+	//$(".errorMsg").hide();
+    }
+    else if (countryCode == "US" ) {
+
+
+
+        $(".WW").css("display","inline");
+        $(".CN").css("display","none");
+        $(".JP").css("display","none");
+        $("li[type=worldwideForm]").show(); //Slide Down Effect
+        $("li[type=chinaForm]").css("display","none");
+        $("li[type=japanForm]").css("display","none");
+	$("#cnWrapper").css("display","none");
+	$("#jpWrapper").css("display","none");
+        $.cookie('showTop', 'expanded3'); //Add cookie 'showTop'
+        jQuery("#newmyTICountryEN option[value='US']").attr("selected","selected");
+	if(regForm.newmyTIPostalCode.value == '') {
+  regForm.newmyTIPostalCode.value = regForm.CNnewmyTIPostalCode.value;
+}
+
+if(regForm.newmyTICompany.value == '') {
+  regForm.newmyTICompany.value = regForm.CNnewmyTICompany.value;
+}
+
+if(regForm.newmyTIFirstName.value == '') {
+	regForm.newmyTIFirstName.value = regForm.CNnewmyTIFirstName.value;
+}
+
+if(regForm.newmyTILastName.value == '') {
+	regForm.newmyTILastName.value = regForm.CNnewmyTILastName.value;
+}
+
+if(regForm.newmyTIEmailAddress.value == '') {
+	regForm.newmyTIEmailAddress.value = regForm.CNnewmyTIEmailAddress.value;
+}
+
+if(regForm.newmyTIConfirmEmailAddress.value == '') {
+	regForm.newmyTIConfirmEmailAddress.value = regForm.CNnewmyTIConfirmEmailAddress.value;
+}
+
+if(regForm.newmyTIPassword.value == '' || regForm.newmyTIPassword.value == 'Create a password') {
+	regForm.newmyTIPassword.value = regForm.CNnewmyTIPassword.value;
+}
+
+if(regForm.newmyTIConfirmPassword.value == '' || regForm.newmyTIConfirmPassword.value == 'Confirm password') {
+	regForm.newmyTIConfirmPassword.value = regForm.CNnewmyTIConfirmPassword.value;
+}
+
+
+
+
+if(regForm.newmyTIPostalCode.value == '') {
+  regForm.newmyTIPostalCode.value = regForm.JPnewmyTIPostalCode.value;
+}
+if(regForm.newmyTICompany.value == '') {
+  regForm.newmyTICompany.value = regForm.JPnewmyTICompany.value;
+}
+
+if(regForm.newmyTIFirstName.value == '') {
+	regForm.newmyTIFirstName.value = regForm.JPnewmyTIFirstName.value;
+}
+
+if(regForm.newmyTILastName.value == '') {
+	regForm.newmyTILastName.value = regForm.JPnewmyTILastName.value;
+}
+
+if(regForm.newmyTIEmailAddress.value == '') {
+	regForm.newmyTIEmailAddress.value = regForm.JPnewmyTIEmailAddress.value;
+}
+
+if(regForm.newmyTIConfirmEmailAddress.value == '') {
+	regForm.newmyTIConfirmEmailAddress.value = regForm.JPnewmyTIConfirmEmailAddress.value;
+}
+
+if(regForm.newmyTIPassword.value == '' || regForm.newmyTIPassword.value == 'Create a password') {
+	regForm.newmyTIPassword.value = regForm.JPnewmyTIPassword.value;
+}
+
+if(regForm.newmyTIConfirmPassword.value == '' || regForm.newmyTIConfirmPassword.value == 'Confirm password') {
+	regForm.newmyTIConfirmPassword.value = regForm.JPnewmyTIConfirmPassword.value;
+}
+
+
+
+	$('#CNnewmyTICompanyEN').val('');	
+$('#CNnewmyTILastNameEN').val('');	
+$('#CNnewmyTIFirstNameEN').val('');	
+$('#JPnewmyTICompanyEN').val('');	
+$('#JPnewmyTILastNameEN').val('');	
+$('#JPnewmyTIFirstNameEN').val('');
+
+$("#newUserError").hide();
+	//$(".errorMsg").hide();
+    }
+    else {
+
+		$('#CNnewmyTICompanyEN').val('');	
+$('#CNnewmyTILastNameEN').val('');	
+$('#CNnewmyTIFirstNameEN').val('');	
+$('#JPnewmyTICompanyEN').val('');	
+$('#JPnewmyTILastNameEN').val('');	
+$('#JPnewmyTIFirstNameEN').val('');	
+
+
+        $(".WW").css("display","inline");
+        $(".CN").css("display","none");
+        $(".JP").css("display","none");
+        $("li[type=worldwideForm]").slideDown("fast"); //Slide Down Effect
+        $("li[type=chinaForm]").css("display","none");
+        $("li[type=japanForm]").css("display","none");
+	$("#cnWrapper").css("display","none");
+	$("#jpWrapper").css("display","none");
+        $.cookie('showTop', 'expanded3'); //Add cookie 'showTop'
+        $('#newmyTICountryEN option:selected').removeAttr('selected');
+        $('#newmyTICountryEN option[value='+countryCode+']').attr('selected','selected');
+        //jQuery("#newmyTICountryEN option[value='+countryCode+']").attr("selected","selected");
+
+	if(regForm.newmyTIPostalCode.value == '' || regForm.newmyTIPostalCode.value == 'Zip or postal code') {
+  regForm.newmyTIPostalCode.value = regForm.CNnewmyTIPostalCode.value;
+}
+if(regForm.newmyTICompany.value == '' || regForm.newmyTICompany.value == 'Company') {
+  regForm.newmyTICompany.value = regForm.CNnewmyTICompany.value;
+}
+
+if(regForm.newmyTIFirstName.value == '' || regForm.newmyTIFirstName.value == 'First name') {
+	regForm.newmyTIFirstName.value = regForm.CNnewmyTIFirstName.value;
+}
+
+if(regForm.newmyTILastName.value == '' || regForm.newmyTILastName.value == 'Last name') {
+	regForm.newmyTILastName.value = regForm.CNnewmyTILastName.value;
+}
+
+if(regForm.newmyTIEmailAddress.value == '' || regForm.newmyTIEmailAddress.value == 'Your email address') {
+	regForm.newmyTIEmailAddress.value = regForm.CNnewmyTIEmailAddress.value;
+}
+
+if(regForm.newmyTIConfirmEmailAddress.value == '' || regForm.newmyTIConfirmEmailAddress.value == 'Confirm email address') {
+	regForm.newmyTIConfirmEmailAddress.value = regForm.CNnewmyTIConfirmEmailAddress.value;
+}
+
+if(regForm.newmyTIPassword.value == '' || regForm.newmyTIPassword.value == 'Create a password') {
+	regForm.newmyTIPassword.value = regForm.CNnewmyTIPassword.value;
+}
+
+if(regForm.newmyTIConfirmPassword.value == '' || regForm.newmyTIConfirmPassword.value == 'Confirm password') {
+	regForm.newmyTIConfirmPassword.value = regForm.CNnewmyTIConfirmPassword.value;
+}
+
+
+
+if(regForm.newmyTIPostalCode.value == '' || regForm.newmyTIPostalCode.value == 'Zip or postal code') {
+  regForm.newmyTIPostalCode.value = regForm.JPnewmyTIPostalCode.value;
+}
+if(regForm.newmyTICompany.value == '' || regForm.newmyTICompany.value == 'Company') {
+  regForm.newmyTICompany.value = regForm.JPnewmyTICompany.value;
+}
+
+if(regForm.newmyTIFirstName.value == '' || regForm.newmyTIFirstName.value == 'First name') {
+	regForm.newmyTIFirstName.value = regForm.JPnewmyTIFirstName.value;
+}
+
+if(regForm.newmyTILastName.value == '' || regForm.newmyTILastName.value == 'Last name') {
+	regForm.newmyTILastName.value = regForm.JPnewmyTILastName.value;
+}
+
+if(regForm.newmyTIEmailAddress.value == '' || regForm.newmyTIEmailAddress.value == 'Your email address') {
+	regForm.newmyTIEmailAddress.value = regForm.JPnewmyTIEmailAddress.value;
+}
+
+if(regForm.newmyTIConfirmEmailAddress.value == '' || regForm.newmyTIConfirmEmailAddress.value == 'Confirm email address') {
+	regForm.newmyTIConfirmEmailAddress.value = regForm.JPnewmyTIConfirmEmailAddress.value;
+}
+
+if(regForm.newmyTIPassword.value == '' || regForm.newmyTIPassword.value == 'Create a password') {
+	regForm.newmyTIPassword.value = regForm.JPnewmyTIPassword.value;
+}
+
+if(regForm.newmyTIConfirmPassword.value == '' || regForm.newmyTIConfirmPassword.value == 'Confirm password') {
+	regForm.newmyTIConfirmPassword.value = regForm.JPnewmyTIConfirmPassword.value;
+}
+
+
+$("#newUserError").hide();
+	//$(".errorMsg").hide();
+    }
+if(document.getElementById('newmyTIPostalCode').value != ""
+		|| document.getElementById('CNnewmyTIPostalCode').value != ""
+			|| document.getElementById('JPnewmyTIPostalCode').value != ""){
+		validatePin();
+        }
+
+}
+
+}
+
+$(document).ready(function(){
+
+  // Toggle Value Fields
+
+$('#newmyTIPostalCode').change(function () {
+	$('#CNnewmyTIPostalCode').val($(this).val());
+	$('#JPnewmyTIPostalCode').val($(this).val());
+});
+
+$('#CNnewmyTIPostalCode').change(function () {
+	$('#newmyTIPostalCode').val($(this).val());
+	$('#JPnewmyTIPostalCode').val($(this).val());
+});
+
+$('#JPnewmyTIPostalCode').change(function () {
+	$('#CNnewmyTIPostalCode').val($(this).val());
+	$('#newmyTIPostalCode').val($(this).val());
+});
+
+
+$('#newmyTICompany').change(function () {
+	$('#CNnewmyTICompany').val($(this).val());
+	$('#JPnewmyTICompany').val($(this).val());
+});
+
+$('#CNnewmyTICompany').change(function () {
+	$('#newmyTICompany').val($(this).val());
+	$('#JPnewmyTICompany').val($(this).val());
+});
+
+$('#JPnewmyTICompany').change(function () {
+	$('#CNnewmyTICompany').val($(this).val());
+	$('#newmyTICompany').val($(this).val());
+});
+
+
+$('#newmyTIFirstName').change(function () {
+	$('#CNnewmyTIFirstName').val($(this).val());
+	$('#JPnewmyTIFirstName').val($(this).val());
+});
+
+$('#CNnewmyTIFirstName').change(function () {
+	$('#newmyTIFirstName').val($(this).val());
+	$('#JPnewmyTIFirstName').val($(this).val());
+});
+
+$('#JPnewmyTIFirstName').change(function () {
+	$('#CNnewmyTIFirstName').val($(this).val());
+	$('#newmyTIFirstName').val($(this).val());
+});
+
+
+$('#newmyTILastName').change(function () {
+	$('#CNnewmyTILastName').val($(this).val());
+	$('#JPnewmyTILastName').val($(this).val());
+});
+
+$('#CNnewmyTILastName').change(function () {
+	$('#newmyTILastName').val($(this).val());
+	$('#JPnewmyTILastName').val($(this).val());
+});
+
+$('#JPnewmyTILastName').change(function () {
+	$('#CNnewmyTILastName').val($(this).val());
+	$('#newmyTILastName').val($(this).val());
+});
+
+
+
+$('#newmyTIEmailAddress').change(function () {
+	$('#CNnewmyTIEmailAddress').val($(this).val());
+	$('#JPnewmyTIEmailAddress').val($(this).val());
+});
+
+$('#CNnewmyTIEmailAddress').change(function () {
+	$('#newmyTIEmailAddress').val($(this).val());
+	$('#JPnewmyTIEmailAddress').val($(this).val());
+});
+
+$('#JPnewmyTIEmailAddress').change(function () {
+	$('#CNnewmyTIEmailAddress').val($(this).val());
+	$('#newmyTIEmailAddress').val($(this).val());
+});
+
+
+$('#newmyTIConfirmEmailAddress').change(function () {
+	$('#CNnewmyTIConfirmEmailAddress').val($(this).val());
+	$('#JPnewmyTIConfirmEmailAddress').val($(this).val());
+});
+
+$('#CNnewmyTIEmailAddress').change(function () {
+	$('#newmyTIConfirmEmailAddress').val($(this).val());
+	$('#JPnewmyTIConfirmEmailAddress').val($(this).val());
+});
+
+$('#JPnewmyTIConfirmEmailAddress').change(function () {
+	$('#CNnewmyTIConfirmEmailAddress').val($(this).val());
+	$('#newmyTIConfirmEmailAddress').val($(this).val());
+});
+
+
+$('#CNnewmyTICompanyEN').change(function () {
+	$('#JPnewmyTICompanyEN').val($(this).val());	
+});
+
+$('#CNnewmyTILastNameEN').change(function () {
+	$('#JPnewmyTILastNameEN').val($(this).val());	
+});
+
+$('#CNnewmyTIFirstNameEN').change(function () {
+	$('#JPnewmyTIFirstNameEN').val($(this).val());	
+});
+
+$('#JPnewmyTICompanyEN').change(function () {
+	$('#CNnewmyTICompanyEN').val($(this).val());	
+});
+
+$('#JPnewmyTILastNameEN').change(function () {
+	$('#CNnewmyTILastNameEN').val($(this).val());	
+});
+
+$('#JPnewmyTIFirstNameEN').change(function () {
+	$('#CNnewmyTIFirstNameEN').val($(this).val());	
+});
+
+
+	
+    $("li[type=worldwideForm]").css("display","none");
+    $("li[type=chinaForm]").css("display","none");
+    $("li[type=japanForm]").css("display","none");
+    $(".WW").css("display","none");
+    $(".CN").css("display","none");
+    $(".JP").css("display","none");
+    $("#newmyTICountryEN").change(function() {
+       toggleFields($('#newmyTICountryEN option:selected').val());
+    });
+    $("#newmyTICountryCN").change(function() {
+       toggleFields($('#newmyTICountryCN option:selected').val());
+    });
+    $("#newmyTICountryJP").change(function() {
+       toggleFields($('#newmyTICountryJP option:selected').val());
+    });
+
+      var showTop = $.cookie('showTop');
+      if (showTop == 'expanded') {
+	  $("#newUser").css("display","block");
+        $(".WW").css("display","inline");
+        $("li[type=worldwideForm]").css("display","block");
+        $('option:selected');
+      } else if (showTop == 'expanded1') {
+	  $("#newUser").css("display","block");
+        $(".CN").css("display","inline");
+        $("li[type=chinaForm]").css("display","block");
+        $('option:selected');
+      } else if (showTop == 'expanded2') {
+	  $("#newUser").css("display","block");
+        $(".JP").css("display","inline");
+        $("li[type=japanForm]").css("display","block");
+        $('option:selected');
+      } else if (showTop == 'expanded3') {
+	  $("#newUser").css("display","block");
+        $(".WW").css("display","inline");
+        $("li[type=worldwideForm]").css("display","block");
+        $('option:selected');
+      } else {
+	  $("#newUser").css("display","block");
+        $(".CN").css("display","none");
+        $(".JP").css("display","none");
+        $(".WW").css("display","inline");
+        $("li[type=chinaForm]").css("display","none");
+        $("li[type=japanForm]").css("display","none");
+        $("li[type=worldwideForm]").css("display","block");
+        $('option:selected');
+      }
+ 
+      getUrlParams();
+});
